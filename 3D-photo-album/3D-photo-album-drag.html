@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="Js原生实现3d效果拖拽展示">
+		<title> 3D拖拽相册 - PC版</title>
+        <style type="text/css">
+			*{padding:0px;margin:0px;}
+			body{background:#000;}
+			/*perpective start*/
+			#perspective{/*景深*/perspective:800px;}
+			#wrap{width:120px;height:180px;margin:auto;position:relative;/*设置3d环境*/transform-style:preserve-3d;transform:rotateX(-10deg);}
+			#wrap img{width:100%;height:100%;position:absolute;box-shadow:0 0 1em pink;border-radius:4px;-webkit-box-reflect:below 10px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5));cursor:pointer;transform:rotateY(0deg) translateZ(0px);/*transition:1s;*/}
+		
+			#wrap p{width:1200px;height:1200px;background:#fff;border-radius:50%;position:absolute;top:102%;left:50%;margin-left:-600px;margin-top:-600px;transform:rotateX(90deg);background:-webkit-radial-gradient(center center,600px 600px,rgba(242,79,242,0.4),rgba(0,0,0,0));font-size: 40px;color: #fff;text-align: center;line-height: 1200px;}
+			/*perspective end*/
+		</style>
+	</head>
+<body>
+	<!--perspective start-->
+	<div id="perspective">
+		<div id="wrap">
+			<img src="img/1.jpg"/>
+			<img src="img/2.jpg"/>
+			<img src="img/3.jpg"/>
+			<img src="img/4.jpg"/>
+			<img src="img/5.jpg"/>
+			<img src="img/6.jpg"/>
+			<img src="img/7.jpg"/>
+			<img src="img/8.jpg"/>
+			<img src="img/9.jpg"/>
+			<img src="img/10.jpg"/>
+			<img src="img/11.jpg"/>
+			<p>*小艳子的萌宠屋*</p>
+		</div>
+	</div>
+	<!--perspective end-->
+	<script src="./js/drag.js"></script>
+</body>
+
+</html>
