@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面编码集(中文编码<gbk,gb2312>,国际编码<utf-8>)-->
+		<meta charset="utf-8">
+		<meta name="keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<title> 炫酷照片墙 </title>
+        <style type="text/css">
+			*{padding:0px;margin:0px;}
+			body{overflow:hidden;}
+			html,body{height:100%;}
+			/*wrap start*/
+			h1{text-align:center;padding-top:5%;color:#E93B2E;font-family:微软雅黑;}
+			#wrap{width:90%;height:90%;position:absolute;top:5%;left:5%;box-shadow:0 0 10em #000;}
+			#wrap ul li{list-style:none;width:125px;height:125px;/*box-shadow:0 0 1px #000;*/position:absolute;transition:left 1s,top 1s;}
+			#wrap ul li img{transform:scale(0.95);transition:transform 1s;}
+			#wrap div a{position:fixed;top:50%;display:none;width:42px;height:42px;overflow:hidden;cursor:pointer;background:#00BCD4;opacity:0.5;}
+			#wrap div a:hover{opacity:1;}
+			#wrap div #right img{position:relative;right:42px;}
+			#left{left:15%;}
+			#right{right:15%;}
+			.msg{width: 200px;height: 50px;position: absolute;top: 45%;left: 45%;text-align: center;z-index: 100;color:blue;display:none;font-size:40px;font-weight:800;}
+			/*wrap end*/
+		</style>
+	</head>
+<body onselectstart = "return false;">
+	<!--wrap start-->
+	<div id="wrap">
+		<h1>馋死你</h1>
+		<div class="msg">点你妹(￫ܫ￩)</div>
+		<ul></ul>
+		<div>
+			<a id="left"><img src="img/nav.png"/></a>
+			<a id="right"><img src="img/nav.png"/></a>
+		</div>
+	</div>
+	<!--wrap end-->
+	<!--引入js官方类库jQuery-->
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $ul = $("#wrap ul");
+			var $wrap = $("#wrap");
+			init();//初始化所有的li元素
+			var $li = $("#wrap ul li");
+			var $img = $("#wrap ul li img");
+			var $btn = $("#wrap div a");
+			var onOff = true;
+			var index = 0;
+			var btnTime = 0;
+			var liTime = 0;
+			//初始化所有的li元素
+			function init(){
+				for(var i=0;i<24;i++){
+					var $li = $("<li><img src='img/"+(i+1)+".jpg'/></li>");
+					$ul.append($li);
+				};
+			}
+			liPosition();//调用li的初始定位方法
+			liRotate();//调用li的初始化度数方法
+			//窗口移动的时候，动态改变li的位置
+			$(window).resize(liPosition);
+			//li的初始定位
+			function liPosition(){
+				var wrapWidth = $wrap.width();
+				var wrapHeight = $wrap.height();
+				var w = (wrapWidth - 125*6)/5;
+				var h = (wrapHeight - 125*4)/3;
+				$li.each(function(i){
+					var iX = i%6;//0 1 2 3 4 5
+					var iY = parseInt(i/6);
+					$(this).css({
+						left:125*iX+w*iX,
+						top:125*iY+h*iY,
+						backgroundPosition:-iX*125+"px "+(-iY*125)+"px"
+					});
+				});
+			};
+			//li的旋转度数
+			function liRotate(){
+				$li.each(function(i){//[-0.5,0.5)-*60--->(-30,30)
+					var r = (Math.random()-0.5)*60;
+					$(this).css("transform","rotate("+r+"deg)");
+				});
+			};
+			//点击li对象的时候
+			$li.click(function(){
+				if(new Date() - liTime >2500){
+					liTime =  new Date();
+					if(onOff){
+					index = $(this).index();
+					$img.css("transform","scale(1)");
+					setTimeout(function(){
+						liClick();
+						$img.fadeOut(1000);//图片淡出
+						$li.css("backgroundImage","url(img/big/"+(index+1)+".jpg)");
+					},1000);
+					//解绑liPosition事件,绑定liClick事件
+					$(window).off("resize").resize(liClick);
+					$btn.show();
+					onOff = false;
+				}else{
+					$img.fadeIn(1000,function(){
+						$li.css("backgroundImage","");
+						$(this).css("transform","scale(0.95)");
+					});
+					//调用liPosition
+					liPosition();
+					//调用liRotate();
+					liRotate();
+					//解绑窗口移动事件，绑定liPosition事件
+					$(window).off("resize").resize(liPosition);
+					$btn.hide();
+					onOff = true;
+					}	
+				}
+			});
+			//点击li的一个方法
+			function liClick(){
+				var wrapWidth = $wrap.width();
+				var wrapHeight = $wrap.height();
+				var l = (wrapWidth-125*6)/2;
+				var t = (wrapHeight - 125*4)/2;
+				$li.each(function(i){
+					var iX = i%6;
+					var iY = parseInt(i/6);
+					$(this).css({
+						left:iX*125+l,
+						top:iY*125+t,
+						transform:"rotate(0deg)"
+					});
+				});
+			};
+			//点击btn按钮
+			$btn.click(function(){
+				msg();
+				//setTimeout(function(){alert("点你妹(￫ܫ￩)")},1000);
+				if(new Date() - btnTime > 1300){
+					btnTime = new Date();
+					var i = $(this).index();
+					if(i){//右按钮
+						index++;
+						index %= $li.length;
+					}else{
+						index--;
+						if(index<0)index = $li.length-1;
+					}
+					//$li.css("backgroundImage","url(img/big/"+(index+1)+".jpg)");
+					liBackground();	
+				}
+			});
+
+			//li背景随按钮切换
+			function liBackground(){
+				var arr = [];
+				for(var i=0;i<24;i++){ 
+					arr[i] = i;
+				}
+				var timer = setInterval(function(){
+					var r = Math.floor(Math.random()*arr.length);//0-23
+					$li.eq(arr[r]).css("backgroundImage","url(img/big/"+(index+1)+".jpg)");
+					arr.splice(r,1);
+					console.log(arr);
+					if(arr.length==0){
+						clearInterval(timer);
+					}
+				},50);
+			};
+			//屏蔽浏览器右键功能
+			$(document).contextmenu(function(){
+				return false;
+			});
+			//弹窗事件
+			function msg(){
+				var message = ["就知道你会点","点你妹(￫ܫ￩)","好好吃啊","老公么么哒","老公好帅","你个小渣渣","馋猫","哎，没救了 ╮(╯▽╰)╭"]
+				var msg = Math.floor(Math.random()*8);
+				var left = Math.ceil(Math.random()*100)+"%";
+				var right = Math.ceil(Math.random()*100)+"%";
+				$(".msg").html(message[msg]);
+				$(".msg").css({"top":left,"left":right});
+				$(".msg").show();
+				setTimeout(function(){
+					$(".msg").hide();
+				},1500)
+			}
+
+		});
+	</script>
+</body>
+
+</html>
