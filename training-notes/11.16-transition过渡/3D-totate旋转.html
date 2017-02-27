@@ -1,0 +1,87 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<title>HTML模板</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		<style type="text/css">
+			*{margin:0;padding:0;}	
+			.all{width:100px;height:100px;background:#F63;border-radius:5px;margin-left:10px;float:left;}
+
+			.a{
+				/*
+					rotateX(50deg)
+					元素围绕X轴 按照给定度数旋转 ，就像烤羊肉串一样翻转
+				*/
+				transform:rotateX(50deg);
+				-webkit-transform:rotateX(50deg);
+				-ms-transform:rotateX(50deg);
+				-o-transform:rotateX(50deg);
+				-moz-transform:rotateX(50deg);
+			}
+
+			.b{
+				/*
+					rotateY(50deg)
+					元素围绕Y轴 按照给定度数旋转
+				*/
+				transform:rotateY(50deg);
+				-webkit-transform:rotateY(50deg);
+				-ms-transform:rotateY(50deg);
+				-o-transform:rotateY(50deg);
+				-moz-transform:rotateY(50deg);
+			}
+
+			.c{
+				/*
+					3D旋转
+					translate3d(x,y,z);
+				*/
+				transform:translate3d(20px,50px,50px);
+				-webkit-transform:translate3d(20px,50px,50px);
+				-ms-transform:translate3d(20px,50px,50px);
+				-o-transform:translate3d(20px,50px,50px);
+				-moz-transform:translate3d(20px,50px,50px);
+			}
+
+			.d{
+				/*
+					3D X轴旋转
+					translateX(30px);
+				*/
+				transform:translateX(30px);
+				-webkit-transform:translateX(30px);
+				-ms-transform:translateX(30px);
+				-o-transform:translateX(30px);
+				-moz-transform:translateX(30px);
+			}
+
+
+			.e{margin-left:50px;
+				/*
+					perspective()
+					为3D转换元素定义透视效果
+				*/
+				transform:perspective(90px);
+			}
+		</style>
+    </head>	
+<body>
+	<div class="all a">X轴旋转</div>
+		
+	<div class="all b">Y轴旋转</div>
+
+	<div class="all c">3D旋转translate3d(x,y,z)</div>
+
+	<div class="all d">为3D转换元素定义透视效果</div>
+
+	<div class="all e">cc太帅了！</div>
+
+
+
+
+
+
+</body>
+</html>

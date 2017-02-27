@@ -1,0 +1,48 @@
+<!doctype html>
+<html>	
+	<head>
+		<!--声明当前页面编码集(中文编码<gbk,gb2312>,国际编码<utf-8>) -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<!--声明当前页面的三要素-->	
+		<title>HTML模板</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		
+		<!--css/js-->
+		<style type="text/css">
+		#div1 {width:488px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+		</style>
+		<script type="text/javascript">
+		function allowDrop(ev)
+		{
+		ev.preventDefault();
+		}
+
+		function drag(ev)
+		{
+		ev.dataTransfer.setData("Text",ev.target.id);
+		}
+
+		function drop(ev)
+		{
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+		}
+		</script>
+
+		<!--外部引用样式-->
+		<link type="text/css" rel="stylesheet" href=" "></link>
+		
+    </head>	
+<body>
+	
+	<p>请把 W3School 的图片拖放到矩形中：</p>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br />
+	<img id="drag1" src="images/1.gif" draggable="true" ondragstart="drag(event)" />
+
+
+</body>
+</html>

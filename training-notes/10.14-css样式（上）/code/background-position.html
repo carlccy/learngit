@@ -1,0 +1,96 @@
+<!doctype html>
+<html>	
+	<head>
+		<!--声明当前页面编码集(中文编码<gbk,gb2312>,国际编码<utf-8>) -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<!--声明当前页面的三要素-->	
+		<title>background-position规定背景图像的位置 - cc</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		
+		<!--css/js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}	
+			
+			body{
+				/*背景图片地址*/
+				background-image:url("images/1.gif");
+
+				/*背景图片平铺*/
+				background-repeat: repeat-x;
+				background-repeat: repeat-y;
+				background-repeat: no-repeat;
+
+				/*background-position: 背景图像位置*/ 
+				background-position:top center;
+				background-position:top left;;
+				background-position:top right;
+
+				background-position:center left;
+				background-position:center center;
+				background-position:center right;
+
+				background-position:bottom left;
+				background-position:bottom center;
+				background-position:bottom right;
+
+				
+				/*百分比形式 background-position:水平 垂直;*/
+				background-position:60% 30%;
+				
+				/*px像素为单位 background-position:水平 垂直;*/
+				background-position:200px 400px;
+			}
+
+			pre{font-size:20px}
+		</style>
+
+		<!--外部引用样式-->
+		<link type="text/css" rel="stylesheet" href=" "></link>
+		
+    </head>	
+<body>
+	<h1>background-position 规定背景图像位置</h1>
+	<br />
+	<hr />
+	<br />
+	<pre>
+	body{ 
+
+		background-image:url('1.gif');
+		background-repeat:no-repeat;
+
+		/*需要把 background-attachment属性设置为"fixed"才能保证该属性在 
+
+		Firefox和Opera 中正常工作。*/
+
+		background-attachment:fixed;
+		background-position:center;
+	}
+		<h2>background-repeat: 背景图片平铺</h2>
+		background-repeat: repeat-x;
+		background-repeat: repeat-y;
+		background-repeat: no-repeat;
+		<h2>background-position: 背景图像位置</h2>
+		background-position:top center;
+		background-position:top left;;
+		background-position:top right;
+
+		background-position:center left;
+		background-position:center center;
+		background-position:center right;
+
+		background-position:bottom left;
+		background-position:bottom center;
+		background-position:bottom right;		
+		<h2>百分比形式 background-position:水平 垂直;</h2>
+		background-position:60% 30%;		
+		<h2>以px像素为单位 background-position:水平 垂直;</h2>
+		background-position:400px 200px;
+	</pre>
+
+<hr />
+<br />
+
+</body>
+</html>

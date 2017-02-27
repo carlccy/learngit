@@ -1,0 +1,48 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<title>JS 拖拽 - cc</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		<style type="text/css">
+			*{margin:0;padding:0;}	
+			body{background:url("images/1.jpg") no-repeat;background-size:cover;}
+			#box{width:800px;height:100px;background:#e6e6e6;position:absolute;top:0;left:0;}
+			#box .b_title{width:100%;height:40px;background:linear-gradient(90deg,#141414,#999);cursor:move;line-height:40px;color:#fff;}
+			#box .b_title .left{float:left;}
+			#box .b_title .right{float:right;}
+		</style>
+    </head>	
+<body>
+	<div id="box">
+		<div class="b_title">
+			<span class="left">左边</span>
+			<span class="right">右边</span>
+		</div>
+	</div>
+
+<script type="text/javascript">
+
+	window.onload = function(){
+		var	boxDom = document.getElementById("box");//获取拖拽的对象
+		boxDom.onmousedown = function(e){//获取拖拽事件
+			var x = e.clientX - this.offsetLeft;//获取元素的横坐标
+			var cc = window.innerWidth - 800;
+			console.log(cc)
+			document.onmousemove = function(i){ //拖动
+				var left = i.clientX - x;
+				if(left <= cc){left = cc};
+				if(left >= 0){left = 0};
+				boxDom.style.left = left + "px";
+			} 
+			document.onmouseup = function(){//松开鼠标解绑
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+		}
+	}
+</script>
+
+</body>
+</html>

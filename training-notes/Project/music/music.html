@@ -1,0 +1,72 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<title>music - cc</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		<style type="text/css">
+			*{margin:0;padding:0;}	
+			body{background:url("images/bg.jpg") no-repeat;background-size:cover;}
+			.music{width:100px;height:100px;border-radius:50px;margin:0 auto;position:relative;animation:down 2s linear forwards;}
+			@keyframes down{
+				from{margin-top:0}
+				to{margin-top:250px}
+			}
+			.music #arry{display:block;border-radius:50px;}
+			.music #m_play{display:block;width:52px;height:52px;border-radius:26px;background:url("images/icons.png") no-repeat 0px -456px;position:absolute;top:24px;left:24px;}
+			.music #m_play:hover{background-position:-72px -456px;}
+			.music #m_stop{display:none;width:52px;height:52px;border-radius:26px;background:url("images/icons.png") no-repeat -144px -456px;position:absolute;top:24px;left:24px;}
+			.music #m_stop:hover{background-position:-216px -456px;}
+
+			@keyframes rotate{
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+
+			.roll{
+				animation:rotate 5s linear infinite;
+				-webkit-animation:rotate 5s linear infinite;
+				-ms-animation:rotate 5s linear infinite;
+				-o-animation:rotate 5s linear infinite;
+				-moz-animation:rotate 5s linear infinite;
+			}
+
+			.paused{
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused;
+				-ms-animation-play-state:paused;
+				-o-animation-play-state:paused;
+				-moz-animation-play-state:paused;
+			}
+
+		</style>
+    </head>	
+<body>
+	
+<div class="music">
+	<img src="images/arry.png" alt="arry老师" width="100" height="100" id="arry" />
+	<a href="#" id="m_play" onclick="tz_play()"></a>
+	<a href="#" id="m_stop" onclick="tz_play()"></a>
+	<audio id="audioDom" src="mp3/1.mp3"></audio>
+</div>
+
+<script type="text/javascript">
+	function tz_play(){
+		var audio = document.getElementById("audio");
+		
+		if(audioDom.paused){
+			document.getElementById("m_stop").style.display = "block";
+			document.getElementById("m_play").style.display = "none";
+			document.getElementById("arry").className = "roll";
+			audioDom.play();
+		}else{
+			document.getElementById("m_stop").style.display = "none";
+			document.getElementById("m_play").style.display = "block";
+			document.getElementById("arry").className += " paused";
+			audioDom.pause();
+		}
+	}
+</script>
+</body>
+</html>

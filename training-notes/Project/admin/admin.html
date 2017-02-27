@@ -1,0 +1,520 @@
+<!doctype html>
+<html>	
+	<head>
+		<!--声明当前页面编码集(中文编码<gbk,gb2312>,国际编码<utf-8>) -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<!--声明当前页面的三要素-->	
+		<title>潭州后台管理系统</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		
+		<!--css/js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;color:#666;font-family:微软雅黑;display:block;}
+			.clear{clear:both;}
+			
+			
+			
+			/*c_left start*/
+			.content .c_left{width:200px;height:100%;background:#282828;position:fixed;z-index:1;}
+			.c_left .l_logo{display:block;height:108px;border-bottom:1px solid #000;background:url("images/logo.png") no-repeat center center;}
+			.c_left .l_nav{}
+			.c_left .l_nav ul li{display:block;width:100%;height:50px;border-bottom:1px solid #000;border-top:1px solid #414141;line-height:50px;}
+			.c_left .l_nav ul li:hover{background:#28b559;}
+			.c_left .l_nav ul li a{display:block;text-decoration:none;color:#fff;font-size:14px;}
+			.span{display:block;}
+			.c_left .l_nav ul li i{width:19px;height:16px;background:url("images/ht_icon.png") no-repeat;float:left;margin:15px 20px 0px 28px;}
+			.c_left .l_nav ul li .l_icon_1{background-position:-232px -51px}
+			.c_left .l_nav ul li .l_icon_2{background-position:-254px -51px}
+			.c_left .l_nav ul li .l_icon_3{background-position:-210px -51px}
+			.c_left .l_nav ul li .l_icon_4{background-position:-274px -51px}
+			.c_left .l_nav ul li .l_icon_5{background-position:-294px -51px}
+			.c_left .l_nav ul li .l_icon_6{background-position:-316px -51px}
+		
+			/*end c_left*/
+
+			/*c_head start*/
+			.content .c_head{width:100%;height:56px;background:#2f3437;}
+			.c_head .h_nav{height:56px;margin-left:200px;float:left;}
+			.c_head .h_nav ul li{display:block;float:left;list-style:none;width:80px;text-align:center;border-left:1px solid #414141;border-right:1px solid #000;}
+
+			.c_head .h_nav ul li a{display:block;width:80px;height:48px;text-decoration:none;color:#838383;margin-top:8px;}
+			.c_head .h_nav ul li:hover a{color:#fff;}
+			.c_head .h_nav ul li i{display:block;width:19px;height:18px;background:url("images/ht_icon.png") no-repeat;margin:0 auto;}
+			.c_head .h_nav li span{display:inline-block;font-size:12px;}
+
+			
+			.c_head .h_nav ul li .h_icon_1{background-position:0 -25px}
+			.c_head .h_nav ul li .h_icon_2{background-position:-24px 0}
+			.c_head .h_nav ul li:hover .h_icon_2{background-position:-24px -25px}
+			.c_head .h_nav ul li .h_icon_3{background-position:-48px 0}
+			.c_head .h_nav ul li:hover .h_icon_3{background-position:-48px -25px}
+			.c_head .h_nav ul li .h_icon_4{background-position:-69px 0}
+			.c_head .h_nav ul li:hover .h_icon_4{background-position:-69px -25px}
+			.c_head .h_nav ul li .h_icon_5{background-position:-90px 0}
+			.c_head .h_nav ul li:hover .h_icon_5{background-position:-90px -25px}
+			.c_head .h_nav ul li .h_icon_6{background-position:-112px 0}
+			.c_head .h_nav ul li:hover .h_icon_6{background-position:-112px -25px}
+			.c_head .h_nav ul li .h_icon_7{background-position:-134px 0}
+			.c_head .h_nav ul li:hover .h_icon_7{background-position:-134px -25px}
+			.c_head .h_nav ul li .h_icon_8{background-position:-152px 0}
+			.c_head .h_nav ul li:hover .h_icon_8{background-position:-152px -25px}
+
+			.c_head .h_info{position:absolute;top:0;right:10px;height:56px;width:260px;}
+			.c_head .h_info .i_user{float:left;line-height:56px;color:#fff;}
+			.c_head .h_info .i_exit{display:block;float:left;width:65px;height:30px;text-decoration:none;background:#28b779;margin:10px 0 0 10px;}
+			.c_head .h_info .i_exit span{display:block;float:left;color:#fff;line-height:30px;margin-left:10px;}
+			.c_head .h_info .i_exit i{display:block;float:left;background:url("images/ht_icon.png") no-repeat 0 -49px;width:16px;height:16px;margin:5px 0 0 5px;}
+			/*end c_head*/
+			/*c_right start*/
+			.c_right{margin-left:200px;height:1500px;background:#f3f4f5;}
+			.c_right .r_position{height:51px;background:#e5e5e5;line-height:51px;border-bottom:1px solid #ccc;}
+			.c_right .r_position i{display:block;float:left;width:20px;height:20px;background:url("images/ht_icon.png") no-repeat -13px -51px;margin:14px 10px 10px;}
+
+			.c_right .r_message .m_list{height:99px;float:left;margin:10px 0 0 1%;}
+			.c_right .r_message .m_list:hover{background:#333;}
+			.c_right .r_message .m_list .m_desc{margin-top:25px;color:#fff;}
+			.c_right .r_message .m_list .m_desc span{font-size:24px;}
+			.c_right .r_message .m_1{width:22%;background:#27a9e3;}
+			.c_right .r_message .m_2{width:16%;background:#28b779;}
+			.c_right .r_message .m_3{width:17%;background:#ffb848;}
+			.c_right .r_message .m_4{width:21%;background:#cc6a6a;}
+			.c_right .r_message .m_5{width:18%;background:#2255a4;}
+			.c_right .r_message .m_6{width:17%;background:#da542e;}
+			.c_right .r_message .m_7{width:20%;background:#2255a4;}
+			.c_right .r_message .m_8{width:18%;background:#6297bc;}
+			.c_right .r_message .m_9{width:20%;background:#27a9e3;}
+			.c_right .r_message .m_10{width:19%;background:#28b779;}
+			.c_right .r_message .m_list i{float:left;width:46px;height:48px;background:url("images/ht_icon.png") no-repeat;margin:25px 5px 0 20px;}
+			.c_right .r_message .m_list .l_1{background-position:2px -75px;}
+			.c_right .r_message .m_list .l_2{background-position:-46px -75px;}
+			.c_right .r_message .m_list .l_3{background-position:-96px -75px;}
+			.c_right .r_message .m_list .l_4{background-position:-144px -75px;}
+			.c_right .r_message .m_list .l_5{background-position:-186px -75px;}
+			.c_right .r_message .m_list .l_6{background-position:-238px -75px;}
+			.c_right .r_message .m_list .l_7{background-position:-288px -75px;width:50px;}
+			.c_right .r_message .m_list .l_8{background-position:-342px -75px;width:50px;}
+			.c_right .r_message .m_list .l_9{background-position:-395px -75px;width:50px;}
+			.c_right .r_message .m_list .l_10{background-position:-446px -75px;width:50px;}
+
+			.c_right .r_table{margin:20px 1% 10px 1%;border:1px solid #999;}
+			.c_right .r_table .t_title{height:40px;line-height:40px;width:100%;background:#ccc;}
+			.c_right .r_table .t_title i{display:block;float:left;width:16px;height:14px;background:url("images/ht_icon.png") no-repeat -386px -15px;margin:12px;}
+			.c_right .r_table .t_title p{float:left;}
+
+			.c_right .r_table .t_lable{height:100px;width:80%;float:left;}
+			.c_right .r_table .t_lable a{display:inline-block;text-decoration:none;float:left;padding-right:25px;height:32px;background:#999;line-height:32px;margin:10px 10px 0 10px;color:#fff;}
+			.c_right .r_table .t_lable a:hover{background:#28b779;}
+			.c_right .r_table .t_lable a i{display:block;float:left;width:16px;height:15px;background:url("images/ht_icon.png") no-repeat;margin:10px 15px;}
+			.c_right .r_table .t_lable a .lable_1{background-position:-32px -52px;}
+			.c_right .r_table .t_lable a .lable_2{background-position:-48px -52px;}
+			.c_right .r_table .t_lable a .lable_3{background-position:-67px -52px;}
+			.c_right .r_table .t_lable a .lable_4{background-position:-85px -52px;}
+			.c_right .r_table .t_lable a .lable_5{background-position:-103px -52px;}
+			.c_right .r_table .t_lable a .lable_6{background-position:-121px -52px;}
+			.c_right .r_table .t_lable a .lable_7{background-position:-191px -52px;}
+			.c_right .r_table .t_lable a .lable_8{background-position:-211px -52px;}
+			.c_right .r_table .t_lable a .lable_9{background-position:-137px -52px;}
+			.c_right .r_table .t_lable a .lable_10{background-position:-153px -52px;}
+			.c_right .r_table .t_lable a .lable_11{background-position:-171px -52px;}
+
+			.c_right .r_table .t_search{height:30px;width:19%;float:right;margin-top:10px;margin-right:1%;}
+			.c_right .r_table .t_search .s_btn{width:20%;height:30px;background:#999;color:#fff;border:none;float:right;outline:none;}
+			.c_right .r_table .t_search .s_text{width:60%;height:28px;line-height:28px;float:right;outline:none;border:1px solid #ddd;}
+
+			.c_right .r_table_list{width:100%;}
+			.c_right .r_table_list .t_tab{width:98%;margin:0 1%;border:1px solid #ddd;border-collapse:collapse;text-align:center;}
+			.c_right .r_table_list .t_tab thead tr th{line-height:40px;background:#eee;}
+			.c_right .r_table_list .t_tab tr td{line-height:40px;border:1px solid #ddd;}
+			.c_right .r_table_list .t_tab thead tr .t_action{width:120px;}
+			.c_right .r_table_list .t_tab tbody tr td .t_tools{width:108px;height:24px;margin:0 auto;display:none;}
+			.c_right .r_table_list .t_tab tbody tr td a{display:block;width:24px;height:24px;background:url("images/ht_icon.png") no-repeat;float:left;margin-left:3px;}
+			.c_right .r_table_list .t_tab tbody tr td .t_tools a:hover{background-color:#000;}
+			.c_right .r_table_list .t_tab tbody tr td .t_tools .t_see{background-position:-359px -45px;background-color:#6297bc;}
+			.c_right .r_table_list .t_tab tbody tr td .t_tools .t_edit{background-position:-379px -47px;background-color:#27a9e3;}
+			.c_right .r_table_list .t_tab tbody tr td .t_tools .t_save{background-position:-398px -47px;background-color:#28b779;}
+			.c_right .r_table_list .t_tab tbody tr td .t_tools .t_del{background-position:-417px -48px;background-color:#ff912f;}
+
+			.c_right .r_table_list .t_tab tbody tr td:hover{background-color:#6F3;}
+			.c_right .r_table_list .t_tab tbody tr:hover{background-color:#9F9;}
+			.c_right .r_table_list .t_tab tbody tr:hover .t_tools{display:block;}
+			/*end c_right*/
+
+		
+			@media screen and (max-width:1100px){
+			.c_right .r_message .m_list i{display:none;}
+			.c_right .r_message .m_list .m_desc{text-align:center;}
+			.c_right .r_table .t_lable a.a_9{display:none;}
+			}
+			@media screen and (max-width:900px){
+	        .content .c_left{width:45px;}
+			.c_left .l_nav ul li i{margin-left:13px;}
+			.c_left .l_nav ul li span{display:none;}
+			.c_left .l_logo{display:block;height:45px;border-bottom:1px solid #000;background:url("images/logo.png") no-repeat 4px 7px;}
+			.content .c_head{height:56px;}
+			.c_head .h_nav{height:56px;margin-left:45px;}
+			.c_head .h_nav ul li{width:50px;}
+			.c_head .h_nav ul li a{display:block;width:50px;height:34px;}
+			.c_head .h_nav ul li i{display:block;width:19px;height:18px;background:url("images/ht_icon.png") no-repeat;margin:20px auto;}
+			.c_head .h_nav li span{display:none;}
+			.c_right{margin-left:45px;}
+			.c_right .r_table .t_lable a.a_11{display:none;}
+			}
+			@media screen and (max-width:800px){
+			.c_head .h_info .i_user{display:none;}
+			.c_head .h_info .i_exit{float:right;}
+			.c_right .r_table .t_lable a.a_3{display:none;}
+			.c_right .r_table .t_lable a.a_4{display:none;}
+			}
+			@media screen and (max-width:700px){
+			.c_right .r_table .t_lable a.a_5{display:none;}
+			.c_right .r_table .t_lable a.a_6{display:none;}
+			
+			}
+		</style>
+    </head>	
+<body>
+
+	<div class="content">
+		<!--c_left start-->
+		<div class="c_left">
+			<a href="#" class="l_logo"></a>
+				
+			<div class="l_nav">
+				<ul>
+					<li><a href="#"><i class="l_icon_1"></i><span>所有元素</span></a></li>
+					<li><a href="#"><i class="l_icon_2"></i><span>表格表单类</span></a></li>
+					<li><a href="#"><i class="l_icon_3"></i><span>标签按钮类</span></a></li>
+					<li><a href="#"><i class="l_icon_4"></i><span>日历类</span></a></li>
+					<li><a href="#"><i class="l_icon_5"></i><span>TAB轮换</span></a></li>
+					<li><a href="#"><i class="l_icon_6"></i><span>其他元素</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<!--end c_left-->
+
+		<!--c_head start-->
+		<div class="c_head">
+			<div class="h_nav">
+				<ul>
+					<li><a href="#"><i class="h_icon_1"></i><span style="color:#fff">首页</span></a></li>
+					<li><a href="#"><i class="h_icon_2"></i><span>界面管理</span></a></li>
+					<li><a href="#"><i class="h_icon_3"></i><span>栏目管理</span></a></li>
+					<li><a href="#"><i class="h_icon_4"></i><span>内容管理</span></a></li>
+					<li><a href="#"><i class="h_icon_5"></i><span>用户管理</span></a></li>
+					<li><a href="#"><i class="h_icon_6"></i><span>论坛中心</span></a></li>
+					<li><a href="#"><i class="h_icon_7"></i><span>应用中心</span></a></li>
+					<li><a href="#"><i class="h_icon_8"></i><span>工具</span></a></li>
+					
+				<ul>
+			</div>
+			<div class="h_info">
+				<p class="i_user">当前用户：cc , 身份：系统管理员</p>
+				<a class="i_exit" href="#">
+					<span>退出</span>
+					<i></i>
+				</a>
+			</div>
+		</div>
+		<!--end c_head-->
+
+		<!--c_right start-->
+		<div class="c_right">
+			<div class="r_position">
+				<i></i>
+				<p>您当前所在位置：首页 > 后台中心</p>
+			</div>
+			<div class="r_message">
+				<div class="m_list m_1">
+					<i class="l_1"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_2">
+					<i class="l_2"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_3">
+					<i class="l_3"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_4">
+					<i class="l_4"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_5">
+					<i class="l_5"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_6">
+					<i class="l_6"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_7">
+					<i class="l_7"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_8">
+					<i class="l_8"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_9">
+					<i class="l_9"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+				<div class="m_list m_10">
+					<i class="l_10"></i>
+					<div class="m_desc">
+						<span>12345</span>
+						<p>用户总数</p>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<div class="r_table">
+				<div class="t_title">
+					<i></i>
+					<p>表格表单类</p>
+				</div>
+				<div class="t_lable">
+					<a href="#" class="a_1"><i class="lable_1"></i><span>添加</span></a>
+					<a href="#" class="a_2"><i class="lable_2"></i><span>编辑</span></a>
+					<a href="#" class="a_3"><i class="lable_3"></i><span>添加章节</span></a>
+					<a href="#" class="a_4"><i class="lable_4"></i><span>上传资料</span></a>
+					<a href="#" class="a_5"><i class="lable_5"></i><span>置顶</span></a>
+					<a href="#" class="a_6"><i class="lable_6"></i><span>取消置顶</span></a>
+					<a href="#" class="a_7"><i class="lable_7"></i><span>刷新数据</span></a>
+					<a href="#" class="a_8"><i class="lable_8"></i><span>标记</span></a>
+					<a href="#" class="a_9"><i class="lable_9"></i><span>生成静态页面</span></a>
+					<a href="#" class="a_10"><i class="lable_10"></i><span>删除</span></a>
+					<a href="#" class="a_11"><i class="lable_11"></i><span>审核信息</span></a>
+				</div>
+				<div class="t_search">
+					<input type="button" value="GO" class="s_btn" />
+					<input type="text" class="s_text" />					
+				</div>
+				<div class="r_table_list">
+				<table class="t_tab">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>ID</th>
+							<th>标题</th>
+							<th>发布者</th>
+							<th>点击数</th>
+							<th>类型</th>
+							<th>发布时间</th>
+							<th>置顶</th>
+							<th>静态化</th>
+							<th>评论</th>
+							<th>状态</th>
+							<th class="t_action">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>001</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see" title="查看"></a>
+									<a href="#" class="t_edit" title="编辑"></a>
+									<a href="#" class="t_save" title="添加"></a>
+									<a href="#" class="t_del" title="删除"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>002</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>003</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>004</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>005</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>006</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>007</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>008</td>
+							<td>Myeclipse注释自动补全</td>
+							<td>cc</td>
+							<td>23423</td>
+							<td>文章</td>
+							<td>2015/2/26</td>
+							<td>已置顶</td>
+							<td>已静态化</td>
+							<td>是</td>
+							<td>已发布</td>
+							<td>
+								<div class="t_tools">
+									<a href="#" class="t_see"></a>
+									<a href="#" class="t_edit"></a>
+									<a href="#" class="t_save"></a>
+									<a href="#" class="t_del"></a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+
+			</div>
+		</div>
+		<!--end c_right-->
+	</div>
+</body>
+</html>

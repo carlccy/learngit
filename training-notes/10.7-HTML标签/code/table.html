@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8(国际编码)-->
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+		<!--声明当前页面的三要素-->
+		<title>HTML标签 - 表格 - cc</title>
+		<meta name="keywords" content="关键词,关键词">
+		<meta name="description" content="">
+
+		<!--js/css-->
+
+	</head>
+<body>
+	
+
+<h1>HTML标签 - 表格</h1>
+<hr />
+<p>
+	表格由 table 标签来定义。每个表格均有若干行（由 tr 标签定义），每行被分割为若干单元格（由 td 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等
+</p>
+
+<table border="1" width="600" height="400">
+	<thead style="color:red">
+		<tr>
+			<td>编号</td>
+			<td>姓名</td>
+			<td>性别</td>
+			<td>年龄</td>
+			<td>婚否</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>001</td>
+			<td>德玛西亚</td>
+			<td colspan="2">女</td>
+			<td>已婚</td>
+		</tr>
+		<tr>
+			<td>002</td>
+			<td>雷克萨斯</td>
+			<td>男</td>
+			<td rowspan="2">18</td>
+			<td>未婚</td>
+		</tr>
+		<tr>
+			<td colspan="2">003 艾欧尼亚</td>
+			<td rowspan="2">女</td>
+			<td>未婚</td>
+		</tr>
+		<tr>
+			<td>004</td>
+			<td>均衡教派</td>
+			<td>18</td>
+			<td>已婚</td>
+		</tr>
+		<tr>
+			<td>005</td>
+			<td>黑色玫瑰</td>
+			<td>男</td>
+			<td>38</td>
+			<td>已婚</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<hr />
+</body>
+</html>

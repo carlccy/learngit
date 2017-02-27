@@ -1,0 +1,60 @@
+<!doctype html>
+<html>	
+	<head>
+		<!--声明当前页面编码集(中文编码<gbk,gb2312>,国际编码<utf-8>) -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<!--声明当前页面的三要素-->	
+		<title>html5拖拽元素 - cc</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		
+		<!--css/js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{background:url("images/1.jpg") no-repeat;background-size:cover;}
+			/*为什么加position，只有加定位上下左右位置才能有作用*/
+			.cc{width:100px;height:100px;background:#69F;}
+			.yy{width:800px;height:100px;background:#CF3;position:absolute;bottom:0px;left:20px;}
+		</style>
+    </head>	
+<body>
+	
+	<div class="cc" draggable="true"></div>
+
+	<div class="yy"></div>
+
+	<script type="text/javascript">
+		window.onload = function(){
+
+			var cc = document.getElementById("cc");
+			var yy = document.getElementById("yy");
+
+			//开始拖拽动作时
+			cc.ondragstart = function(e){
+				//兼容写法
+				e = e || window.event;
+				//获取当前拖拽
+				var a = e.target;//相当于cc对象(a == cc)等价
+				//console.log(a.outerHTML);
+				//存储cc对象 在text中
+				e.dataTransfer.setDate("text",a.outerHTML);
+			}
+
+			//拖拽到yy对象上面时
+			yy.ondragover = function(e){
+				e.target.style.background = "yellow";
+				e.preventDefault();//阻止被拖拽对象回去
+			}
+			//拖拽放开鼠标时
+			yy.ondrop = function(e){
+				e = e || window.event;
+				e.target.background = "#fff";
+				//将储存的对象放入yy中
+				this.innerHTML += e.dataTransfer.getData("text");
+				e.preventDefault();
+			}
+		}
+	</script>
+
+</body>
+</html>

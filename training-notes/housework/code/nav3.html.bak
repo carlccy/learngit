@@ -1,0 +1,167 @@
+<!doctype html>
+<html>	
+	<head>
+		<!--声明当前页面编码集(中文编码<gbk,gb2312>,国际编码<utf-8>) -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<!--声明当前页面的三要素-->	
+		<title>课程目录 - cc</title>	
+		<meta name="Keywords" content="关键词，关键词">	
+		<meta name="Discription" content="">	
+
+		<!--css/js bgcolor="#00FF99"-->
+		<style>
+		
+		*{margin:0;padding:0;} 
+		body{background:url(images/1.jpg) repeat;background-position:-200px -90px;font-size:14px;font-family:微软雅黑;}
+		h1{font-size:25px;color:#F06;margin-left:30px;}
+		ul{list-style:none}
+		/*导航内容-开始*/
+		.nav{width:185px;font-family:"微软雅黑";font-size:14px;}
+		.nav > li > a{background:#b92422;height:40px;line-height:40px;color:#fff;display:block;text-decoration:none;padding-left:15px;font-weight:bold;box-shadow:0 1px 1px #d03b39 inset;border-bottom:1px solid #911c1c;position:relative;}
+		.nav > li > a:hover{background:#c72b29}
+		.nav > li > a:hover span{color:#fff}
+		.nav > li > a > span{background:#9e1919;height:20px;line-height:20px;font-size:12px;display:inline-block;position:absolute;top:10px;right:5px;padding:0 5px;color:#f67d7b;box-shadow:0 1px 2px #9e1919 inset;}
+		/*二级导航内容-开始*/
+		.nav > li > ul > li > a{color:#d44f4f;text-decoration:none;display:block;line-height:35px;height:35px;border-bottom:1px solid #821717;padding-left:20px;}
+		.nav > li > ul > li > a:hover{background:#ff6c00;color:#fff}
+
+		/*二级导航内容-结束*/
+		/*点击出现内容-开始*/
+		.nav > li > ul{height:0;overflow:hidden;}
+		.nav > li:target ul{height:auto;background:#911c1c;}
+
+		/*点击出现内容-结束*/
+		/*导航内容-结束*/
+		</style>
+
+ </head>	
+
+
+<body>
+<div id="nav">
+<h1>课程目录</h1>
+		
+<ul class="nav">
+	<li id="it1"><a href="#it1">一、HTML介绍<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\9.30-HTML标签\code\introduction.html" target="content">认识HTML</a></li>
+			<li><a href="..\..\9.30-HTML标签\code\html.html" target="content">HTML模板</a></li>
+			<li><a href="..\..\9.30-HTML标签\code\head.html" target="content">HTML头元素</a></li>
+			<li><a href="..\..\9.30-HTML标签\code\double-simple.html" target="content">单-对标签</a></li>
+		</ul>
+	</li>
+
+	<li id="it2"><a href="#it2">二、文本标签<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\10.3-HTML标签\code\ts.html" target="content">特殊标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\a.html" target="content">a标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\p.html" target="content">p标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\strong-b.html" target="content">strong-b标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\font.html" target="content">font标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\span.html" target="content">span标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\marquee.html" target="content">marquee标签</a></li>
+			<li><a href="..\..\10.3-HTML标签\code\All.html" target="content">a锚链接</a></li>
+		</ul>
+	</li>
+
+	<li id="it3"><a href="#it3">三、图片列表<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\10.5-HTML标签\code\img.html" target="content">图片路径</a></li>
+			<li><a href="..\..\10.5-HTML标签\code\img-1.html" target="content">图片格式</a></li>
+			<li><a href="..\..\10.5-HTML标签\code\align.html" target="content">图片浮动</a></li>
+			<li><a href="..\..\10.5-HTML标签\code\ulli.html" target="content">无序列表</a></li>
+			<li><a href="..\..\10.5-HTML标签\code\olli.html" target="content">有序列表</a></li>
+			<li><a href="..\..\10.5-HTML标签\code\dlli.html" target="content">定义列表</a></li>
+		</ul>
+	</li>
+
+	<li id="it4"><a href="#it4">四、表单元素<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\10.7-HTML标签\code\form.html" target="content">表单介绍</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\text.html" target="content">文本框</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\radio.html" target="content">单选按钮</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\checkbox.html" target="content">复选按钮</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\select.html" target="content">下列列表</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\textarea.html" target="content">文本域</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\label.html" target="content">增大受面</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\hidden.html" target="content">隐藏文本</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\table.html" target="content">表格</a></li>
+			<li><a href="..\..\10.7-HTML标签\code\All.html" target="content">表单应用</a></li>
+
+		</ul>
+	</li>
+
+	<li id="it5"><a href="#it5">五、框架元素<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\10.9-HTML标签\code\pre.html" target="content">预格式化</a></li>
+			<li><a href="..\..\10.9-HTML标签\code\iframe.html" target="content">外链框架</a></li>
+			<li><a href="..\..\10.9-HTML标签\code\frameset.html" target="content">内链框架</a></li>
+			<li><a href="..\..\10.9-HTML标签\code\frameset-mex.html" target="content">混合框架</a></li>
+		</ul>
+	</li>
+	
+	<li id="it6"><a href="#it6">六、CSS<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\10.12-css基础语法\code\css.html" target="content">css样式</a></li>
+			<li><a href="..\..\10.12-css基础语法\code\style.html" target="content">style</a></li>
+			<li><a href="..\..\10.12-css基础语法\code\id.html" target="content">id</a></li>
+			<li><a href="..\..\10.12-css基础语法\code\class.html" target="content">class</a></li>
+			<li><a href="..\..\10.12-css基础语法\code\link-import.html" target="content">link/import</a></li>
+			<li><a href="..\..\10.14-css样式（上）\code\background.html" target="content">背景属性</a></li>
+			<li><a href="..\..\10.14-css样式（上）\code\background-color.html" target="content">背景颜色</a></li>
+			<li><a href="..\..\10.14-css样式（上）\code\background-size.html" target="content">背景尺寸</a></li>
+			<li><a href="..\..\10.14-css样式（上）\code\background-position.html" target="content">背景位置</a></li>
+			<li><a href="..\..\10.14-css样式（上）\code\background-all.html" target="content">完整背景</a></li>
+			<li><a href="..\..\10.16-css样式（下）\code\text.html" target="content">文本属性</a></li>
+			<li><a href="..\..\10.16-css样式（下）\code\text-font.html" target="content">字体属性</a></li>
+			<li><a href="..\..\10.16-css样式（下）\code\text-decoration.html" target="content">划线属性</a></li>
+			<li><a href="..\..\10.16-css样式（下）\code\text-transform.html" target="content">字母大小写</a></li>
+			<li><a href="..\..\10.16-css样式（下）\code\text.html" target="content">表格属性</a></li>
+			
+
+
+
+		</ul>
+	</li>
+
+
+	<li id="it7"><a href="#it7">七、DIV盒子<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\10.19-div盒子\code\div.html" target="content">div盒子</a></li>
+			<li><a href="..\..\10.19-div盒子\code\padding.html" target="content">内边距</a></li>
+			<li><a href="..\..\10.19-div盒子\code\margin.html" target="content">外边距</a></li>
+			<li><a href="..\..\10.19-div盒子\code\margin-all.html" target="content">外边距重合</a></li>
+			<li><a href="..\..\10.19-div盒子\code\border.html" target="content">盒子边框</a></li>
+			<li><a href="..\..\10.21-css定位\code\absolute.html" target="content">据对定位</a></li>
+			<li><a href="..\..\10.21-css定位\code\relative.html" target="content">相对定位</a></li>
+			<li><a href="..\..\10.21-css定位\code\position-1.html" target="content">组合定位1</a></li>
+			<li><a href="..\..\10.21-css定位\code\position-2.html" target="content">组合定位2</a></li>
+			<li><a href="..\..\10.21-css定位\code\float.html" target="content">浮动定位</a></li>
+
+			
+		</ul>
+	</li>
+
+	<li id="it8"><a href="#it8">八、项目实战<span>更多</span></a>
+		<ul>
+			<li><a href="..\..\Project\微镇商票宝\microtown.html" target="content">微镇商票宝</a></li>
+			<li><a href="..\..\Project\jd-banner.html" target="content">京东banner</a></li>
+			<li><a href="..\..\Project\JD\code\jd-nav.html" target="content">京东nav</a></li>
+			<li><a href="..\..\Project\mi\code\mi.html" target="content">小米官网</a></li>
+			<li><a href="..\..\Project\nav.html" target="content">目录</a></li>
+			<li><a href="..\..\Project\search.html" target="content">搜索框</a></li>
+			<li><a href="..\..\Project\baidu_baike.html" target="content">百度百科</a></li>
+			<li><a href="..\..\Project\Music Player\music.html" target="content">音乐播放器</a></li>
+			<li><a href="..\..\Project\百度换肤\index.html" target="content">百度换肤</a></li>
+			<li><a href="..\..\Project\music\music.html" target="content">音乐</a></li>
+			<li><a href="..\..\Project\youku\youku.html" target="content">优酷选项卡</a></li>
+			
+		</ul>
+	</li>
+
+</ul>
+</div>
+
+
+</body>
+</html>

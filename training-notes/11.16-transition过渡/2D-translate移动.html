@@ -1,0 +1,88 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+		<title>CSS3 2D转换 - translate - cc</title>	
+		<meta name="keywords" content="关键词，关键词">	
+		<meta name="discription" content="">
+		<style type="text/css">
+			*{margin:0;padding:0;}	
+			body{font-size:14px;font-family:"微软雅黑";color:#fff;}
+			.arry{width:100px;height:100px;background:#3F3;border-radius:6px;text-align:center;line-height:100px;
+			/*
+				translate(x,y) 方法
+				元素从其当前位置移动，根据给定的x坐标和y坐标参数
+				把元素从左侧移动50px, 从顶部移动100px
+			*/
+			transform:translate(0,0);
+			-webkit-transform: translate(0,0); /* Safari Chrome */
+			-ms-transform: translate(0,0); /* IE9 */
+			-o-transform: translate(0,0); /* Opera */
+			-moz-transform: translate(0,0);/* Firefox */
+			}
+			/*
+				rotate() 方法
+				顺时针旋转给定的角度，允许为负值，元素将逆时针旋转,旋转中心为中心点
+			*/
+
+			.arry:hover{
+				transform:rotate(60deg);
+				-webkit-transform:rotate(60deg);
+				-ms-transform:rotate(60deg);
+				-o-transform:rotate(60deg);
+				-moz-transform:rotate(60deg);
+			}
+
+			.mini{width:100px;height:100px;background:#9C0;border-radius:6px;margin:50px auto;
+			/*
+				scale() 方法
+				元素的尺寸会增加或 减少，增加或减少元素尺寸的倍数
+			*/
+
+				transform:scale(1,2);
+				-webkit-transform:scale(1,2);
+				-ms-transform:scale(1,2);
+				-o-transform:scale(1,2);
+				-moz-transform:scale(1,2);
+			}
+
+			.keke{width:100px;height:100px;background:#F9C;border-radius:6px;margin:100px auto;
+			/*
+				skew() 方法
+				元素翻转的角度，围绕x轴和y轴翻转
+			*/
+				transform:skew(20deg,30deg);
+				-webkit-transform:skew(20deg,30deg);
+				-ms-transform:skew(20deg,30deg);
+				-o-transform:skew(20deg,30deg);
+				-moz-transform:skew(20deg,30deg);
+
+			}
+
+			.ruby{width:100px;height:100px;background:#696;border-radius:6px;margin:100px auto;
+				/*
+					matrix(,,,,,)
+					把所有的2D旋转全部方法组合在一起
+				*/
+				transform:matrix(0.3,0.6,-0.4,0.7,0,0);
+				-webkit-transform:matrix(0.3,0.6,-0.4,0.7,0,0);
+				-ms-transform:matrix(0.3,0.6,-0.4,0.7,0,0);
+				-o-transform:matrix(0.3,0.6,-0.4,0.7,0,0);
+				-moz-transform:matrix(0.3,0.6,-0.4,0.7,0,0);
+			}
+		</style>
+    </head>	
+<body>
+	
+<div class="arry">rotate()</div>
+
+<div class="mini">scale()</div>
+
+<div class="keke">skew()</div>
+
+<div class="ruby">matrix()</div>
+
+
+
+</body>
+</html>
