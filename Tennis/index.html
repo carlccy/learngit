@@ -234,60 +234,7 @@ h1,h2{
     <div id="add_scrolling" onclick="motion(true)" style="cursor:pointer"></div>
 </div>
 
-<!-- 渠道包 -->
-<script type="text/javascript">
-(function () {
-    var map = {
-        'SEM1': 'SEM1',
-        'SEM2': 'SEM2',
-        'SEM3': 'SEM3',
-        'SEM4': 'SEM4',
-        'SEM5': 'SEM5',
-        'SEM6': 'SEM6',
-        'SEM7': 'SEM7',
-        'SEM8': 'SEM8',
-        'SEM9': 'SEM9',
-        'SEM10': 'SEM10',
-        'SEM11': 'SEM11',
-        'SEM12': 'SEM12',
-        'SEM13': 'SEM13',
-        'SEM14': 'SEM14',
-        'SEM15': 'SEM15',
-        'SEM16': 'SEM16',
-        'SEM17': 'SEM17',
-        'SEM18': 'SEM18',
-        'SEM19': 'SEM19',
-        'SEM20': 'SEM20',
-        'WM1': 'WM1',
-        'WM2': 'WM2',
-        'WM3': 'WM3',
-        'WM4': 'WM4',
-        'WM5': 'WM5',
-        'Hm1': 'Hm1',
-        'Hm2': 'Hm2',
-        'Hm3': 'Hm3',
-        'Hm4': 'Hm4',
-        'Hm5': 'Hm5',
-        'Ycm1': 'Ycm1',
-        'Tpy1': 'Tpy1',
-        'Tpy2': 'Tpy2',
-        'Ng1': 'Ng1'
-    }
-    var result = location.search.match(/ADTAG=([^&]+)/i);
-    var eltList = document.getElementsByName('qb9_download');
-    if (result && result[1] && map[result[1]]) {
-        for (var i = 0, len = eltList.length; i < len; i++) {
-            eltList[i].href = 'https://dldir1.qq.com/invc/tt/QQBrowser_Setup_' + map[result[1]] + '.exe';
-        }
-    }
 
-    // 特殊版本替换图
-    if (/[?&]adtag=SEM4(&|$)/i.test(location.search)) {
-        $('#p0_btn_pc img').attr('src', '9.0/images/btn_wechat.png');
-        $('#p0_t_2').addClass('wechat');
-    }
-})();
-</script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		var swiper = new Swiper('.swiper-container', {
